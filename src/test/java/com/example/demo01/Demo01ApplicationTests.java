@@ -17,7 +17,7 @@ class Demo01ApplicationTests {
     public void findAll() {
         List<TbOrder> tbOrders=tbOrderService.list();
         System.out.println(tbOrders);
-
+//测试
     }
 
 }
