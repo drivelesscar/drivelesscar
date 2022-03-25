@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo01.entity.TbVehicle;
 import com.example.demo01.mapper.TbVehicleMapper;
 import com.example.demo01.service.TbVehicleService;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>
@@ -13,5 +14,6 @@ import com.example.demo01.service.TbVehicleService;
  * @author admin
  * @since 2022-03-22
  */
+@Service
 public class TbVehicleServiceImpl extends ServiceImpl<TbVehicleMapper, TbVehicle> implements TbVehicleService {
 }
