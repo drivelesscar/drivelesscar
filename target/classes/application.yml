@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/driveless_car
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/example/demo01/mapper/xml/*.xml
+server:
+  port: 8081
+
+
+
+
+
