@@ -23,31 +23,31 @@ public class TbSendOrderController {
     @Autowired
     private TbSendOrderService tbSendOrderService;
 
-    @ApiOperation("查询全部配送订单列表")
+    @ApiOperation("查询全部寄件订单列表")
     @GetMapping("/list")
     public List<TbSendOrder> list(){
         return this.tbSendOrderService.list();
     }
 
-    @ApiOperation("更新配送订单")
+    @ApiOperation("更新寄件订单")
     @PutMapping("/update")
     public boolean update(@RequestBody TbSendOrder tbSendOrder){
         return this.tbSendOrderService.updateById(tbSendOrder);
     }
 
-    @ApiOperation("删除配送订单")
+    @ApiOperation("删除寄件订单")
     @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable("id") Integer id){
         return this.tbSendOrderService.removeById(id);
     }
 
-    @ApiOperation("查询某个配送订单")
+    @ApiOperation("查询某个寄件订单")
     @GetMapping("/find/{id}")
     public TbSendOrder find(@PathVariable("id") Integer id){
         return this.tbSendOrderService.getById(id);
     }
 
-    @ApiOperation("新增配送订单")
+    @ApiOperation("新增寄件订单")
     @PostMapping("/add")
     public boolean add(@RequestBody TbSendOrder tbSendOrder){
         return this.tbSendOrderService.save(tbSendOrder);
