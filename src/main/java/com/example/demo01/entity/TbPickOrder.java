@@ -19,9 +19,9 @@ import lombok.EqualsAndHashCode;
  * @since 2022-03-22
  */
 @Data
-@ApiModel(value="TbOrder对象", description="配送订单表")
+@ApiModel(value="TbPickOrder对象", description="取件配送订单表")
   @EqualsAndHashCode(callSuper = false)
-    public class TbOrder implements Serializable {
+    public class TbPickOrder implements Serializable {
 
     private static final long serialVersionUID=1L;
 

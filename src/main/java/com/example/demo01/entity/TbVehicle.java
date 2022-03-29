@@ -44,8 +44,26 @@ public class TbVehicle implements Serializable {
     private String station;
 
     /**
-     * 无人车各仓位状态
+     * 无人车1号仓位状态
      */
-    @ApiModelProperty(value = "无人车各仓位状态")
-    private String store_status;
+    @ApiModelProperty(value = "无人车1号仓位状态")
+    private String storestatus1;
+
+    /**
+     * 无人车2号仓位状态
+     */
+    @ApiModelProperty(value = "无人车2号仓位状态")
+    private String storestatus2;
+
+    /**
+     * 无人车3号仓位状态
+     */
+    @ApiModelProperty(value = "无人车3号仓位状态")
+    private String storestatus3;
+
+    /**
+     * 无人车4号仓位状态
+     */
+    @ApiModelProperty(value = "无人车4号仓位状态")
+    private String storestatus4;
 }

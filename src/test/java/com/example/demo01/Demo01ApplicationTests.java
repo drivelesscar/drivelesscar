@@ -1,7 +1,7 @@
 package com.example.demo01;
 
-import com.example.demo01.entity.TbOrder;
-import com.example.demo01.service.TbOrderService;
+import com.example.demo01.entity.TbPickOrder;
+import com.example.demo01.service.TbPickOrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,12 +12,12 @@ import java.util.List;
 class Demo01ApplicationTests {
 
     @Autowired
-    private TbOrderService tbOrderService;
+    private TbPickOrderService tbOrderService;
 
     //查询所有数据
     @Test
     public void findAll() {
-        List<TbOrder> tbOrders=tbOrderService.list();
+        List<TbPickOrder> tbOrders=tbOrderService.list();
         System.out.println(tbOrders);
     }
 
@@ -31,14 +31,14 @@ class Demo01ApplicationTests {
     //测试逻辑删除后的查询
     @Test
     public void testLogicDeleteSelect(){
-        List<TbOrder> tbOrders = tbOrderService.list();
+        List<TbPickOrder> tbOrders = tbOrderService.list();
         tbOrders.forEach(System.out::println);
     }
 
     //修改
     @Test
     public void testUpdate(){
-        TbOrder tbOrder = new TbOrder();
+        TbPickOrder tbOrder = new TbPickOrder();
         tbOrder.setId(1);
         tbOrder.setOrderId("02");
         int count = tbOrderService.count();
@@ -48,7 +48,7 @@ class Demo01ApplicationTests {
     //添加
     @Test
     public void testAdd(){
-        TbOrder tbOrder = new TbOrder();
+        TbPickOrder tbOrder = new TbPickOrder();
         tbOrder.setOrderId("03");
         tbOrder.setId(3);
         tbOrder.setDestination("bb");

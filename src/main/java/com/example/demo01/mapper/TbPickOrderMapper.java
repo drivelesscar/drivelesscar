@@ -1,6 +1,6 @@
 package com.example.demo01.mapper;
 
-import com.example.demo01.entity.TbOrder;
+import com.example.demo01.entity.TbPickOrder;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author admin
  * @since 2022-03-22
  */
-public interface TbOrderMapper extends BaseMapper<TbOrder> {
+public interface TbPickOrderMapper extends BaseMapper<TbPickOrder> {
 
 }

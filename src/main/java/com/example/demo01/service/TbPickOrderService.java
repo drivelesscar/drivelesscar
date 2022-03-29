@@ -1,7 +1,7 @@
 package com.example.demo01.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.demo01.entity.TbOrder;
+import com.example.demo01.entity.TbPickOrder;
 
 /**
  * <p>
@@ -11,8 +11,8 @@ import com.example.demo01.entity.TbOrder;
  * @author admin
  * @since 2022-03-22
  */
-public interface TbOrderService extends IService<TbOrder> {
+public interface TbPickOrderService extends IService<TbPickOrder> {
 
-    int update(TbOrder tbOrder);
+    int update(TbPickOrder tbPickOrder);
 
 }
