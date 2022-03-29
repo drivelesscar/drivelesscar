@@ -12,4 +12,5 @@ import com.example.demo01.entity.TbUser;
  * @since 2022-03-22
  */
 public interface TbUserService extends IService<TbUser> {
+    TbUser loginIn(String account, String password);
 }
