@@ -11,6 +11,7 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:com/example/demo01/mapper/xml/*.xml
+  type-aliases-package: com.example.demo01.entity
 server:
   port: 8081
 

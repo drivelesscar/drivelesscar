@@ -25,6 +25,7 @@ public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUser> impleme
 
     @Override
     public TbUser loginIn(String account, String password) {
-        return TbUserMapper.getInfo(account,password);
+        return TbUserMapper.getInfo(account, password);
+
     }
 }
