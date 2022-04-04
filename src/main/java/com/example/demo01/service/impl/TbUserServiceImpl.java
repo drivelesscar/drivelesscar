@@ -28,4 +28,9 @@ public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUser> impleme
         return TbUserMapper.getInfo(account, password);
 
     }
+
+    @Override
+    public int insert(TbUser user) {
+        return insert(user);
+    }
 }

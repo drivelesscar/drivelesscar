@@ -13,4 +13,6 @@ import com.example.demo01.entity.TbUser;
  */
 public interface TbUserService extends IService<TbUser> {
     TbUser loginIn(String account, String password);
+
+    int insert(TbUser user);
 }

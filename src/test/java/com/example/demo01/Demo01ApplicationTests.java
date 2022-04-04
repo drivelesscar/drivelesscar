@@ -2,6 +2,10 @@ package com.example.demo01;
 
 //import com.example.demo01.entity.TbOrder;
 //import com.example.demo01.service.TbOrderService;
+import com.example.demo01.entity.TbPickOrder;
+import com.example.demo01.entity.TbSendOrder;
+import com.example.demo01.service.TbPickOrderService;
+import com.example.demo01.service.TbSendOrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,16 +15,26 @@ import java.util.List;
 @SpringBootTest
 class Demo01ApplicationTests {
 
-//    @Autowired
-//    private TbOrderService tbOrderService;
-//
-//
-//    //查询所有数据
+    @Autowired
+    private TbPickOrderService tbPickOrderService;
+
+
+    //查询所有数据
 //    @Test
 //    public void findAll() {
-//        List<TbOrder> tbOrders=tbOrderService.list();
-//        System.out.println(tbOrders);
+//        List<TbPickOrder> tbPickOrders=tbPickOrderService.list();
+//        System.out.println(tbPickOrders);
 //    }
+
+    @Autowired
+    private TbSendOrderService tbSendOrderService;
+
+    //查询所有数据
+    @Test
+    public void findAll() {
+        List<TbSendOrder> tbSendOrders=tbSendOrderService.list();
+        System.out.println(tbSendOrders);
+    }
 //
 //    //删除第二条数据
 //    @Test

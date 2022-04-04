@@ -1,4 +1,4 @@
-package com.example.demo01.controller;
+//package com.example.demo01.controller;
 
 import com.example.demo01.entity.TbUser;
 import com.example.demo01.service.TbUserService;
@@ -12,30 +12,36 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 //@RestController
-@Controller
-@Api(tags = "登录注册")
-@RequestMapping("/api/login")
-public class LoginController {
+//@Controller
+//@Api(tags = "登录注册")
+//@RequestMapping("/api")
+//public class LoginController {
 
     //将Service注入Web层
-    @Autowired
-    private  TbUserService tbUserService;
+//    @Autowired
+//    private  TbUserService tbUserService;
 
-    @ApiOperation("登录")
-    @RequestMapping("/login")
-    public String show(){
-        return "login";
-    }
+//    @ApiOperation("登录")
+//    @RequestMapping("/login")
+//    public String show(){
+//        return "login";
+//    }
 
-    @ApiOperation("注册")
-    @RequestMapping(value="/loginIn",method= RequestMethod.POST)
-    public String login(String account,String password){
-        TbUser tbUser = tbUserService.loginIn(account,password);
-        if (tbUser!=null){
-            return "success";
-        }else{
-            return "error";
-        }
-    }
+//    @ApiOperation("注册")
+//    @RequestMapping(value="/loginIn",method= RequestMethod.POST)
+//    public String login(String account,String password){
+//        TbUser tbUser = tbUserService.loginIn(account,password);
+//        if (tbUser!=null){
+//            return "success";
+//        }else{
+//            return "error";
+//        }
 
-}
+
+
+
+
+
+//    }
+
+
