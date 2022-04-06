@@ -5,11 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo01.entity.TbUser;
 import com.example.demo01.mapper.TbUserMapper;
 import com.example.demo01.service.TbUserService;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * <p>
@@ -27,12 +23,13 @@ public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUser> impleme
         return baseMapper.insert(user);
     }
 
-//    @Resource
-//    private TbUserMapper tbUserMapper;
-//
-//    @Override
-//    public TbUser loginIn(String account, String password) {
-//        return TbUserMapper.getInfo(account, password);
-//
-//    }
+    @Override
+    public int updateMonitorPointByAccount(TbUser tbUser) {
+        TbUser tbUser1 = baseMapper.selectOne(new LambdaQueryWrapper<TbUser>()
+                .eq(TbUser::getAccount, tbUser.getAccount()));
+        if (tbUser1.getPassword().equals(tbUser.getPassword())) {
+           return 1;
+        }
+        return 0;
+    }
 }

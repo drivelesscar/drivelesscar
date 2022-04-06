@@ -34,14 +34,11 @@ public class TbUserController {
 
     @ApiOperation("用户信息更新")
     @PutMapping("/update")
-    public boolean update(@RequestBody TbUser tbUser) {
-        return this.tbUserService.updateById(tbUser);
-    }
-//    @ApiOperation("用户信息更新")
-//    @PutMapping("/update")
-//    public int update(@RequestBody TbUser tbUser){
-//        int update = tbUserService.updateMonitorPointByAccount(tbUser);
-//    }
+        public boolean update(@RequestBody TbUser oldTbUser,TbUser newTbUser) {
+            if (tbUserService.updateMonitorPointByAccount(oldTbUser) == 1&&oldTbUser.getAccount().equals(newTbUser.getAccount()))
+                return this.tbUserService.updateById(newTbUser);
+            return false;
+        }
     @ApiOperation("删除用户信息")
     @DeleteMapping("/delete/{account}")
     public boolean delete(@PathVariable("account") String account){
