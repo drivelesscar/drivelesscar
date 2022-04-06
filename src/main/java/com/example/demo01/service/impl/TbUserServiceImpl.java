@@ -1,9 +1,11 @@
 package com.example.demo01.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo01.entity.TbUser;
 import com.example.demo01.mapper.TbUserMapper;
 import com.example.demo01.service.TbUserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,18 +21,31 @@ import javax.annotation.Resource;
  */
 @Service
 public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUser> implements TbUserService {
-
-    @Resource
-    private TbUserMapper tbUserMapper;
-
     @Override
-    public TbUser loginIn(String account, String password) {
-        return TbUserMapper.getInfo(account, password);
-
+    public String login(String username, String password) {
+        TbUser user = baseMapper.selectOne(new LambdaQueryWrapper<TbUser>()
+                .eq(TbUser::getAccount, username));
+        if (user.getPassword().equals(password)) {
+           TbUser tbUser = new TbUser();
+           tbUser.setAccount(username);
+           tbUser.setPassword(password);
+            return username+"登陆成功";
+        }
+        else {
+            return "密码错误";
+        }
     }
 
     @Override
     public int insert(TbUser user) {
         return insert(user);
     }
+//    @Resource
+//    private TbUserMapper tbUserMapper;
+//
+//    @Override
+//    public TbUser loginIn(String account, String password) {
+//        return TbUserMapper.getInfo(account, password);
+//
+//    }
 }

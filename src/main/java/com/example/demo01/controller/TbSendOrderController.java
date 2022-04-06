@@ -1,9 +1,12 @@
 package com.example.demo01.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.example.demo01.entity.TbPickOrder;
 import com.example.demo01.entity.TbSendOrder;
 import com.example.demo01.service.TbSendOrderService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -45,6 +49,14 @@ public class TbSendOrderController {
     @GetMapping("/find/{id}")
     public TbSendOrder find(@PathVariable("id") Integer id){
         return this.tbSendOrderService.getById(id);
+    }
+
+    @ApiOperation("查询某个用户的全部订单")
+    @GetMapping("/search")
+    public TbSendOrder searchByAccount(@RequestParam @ApiParam(value = "用户名", required = true) String userAccount) {
+        TbSendOrder tbSendOrder = tbSendOrderService.getOne(new QueryWrapper<TbSendOrder>()
+                .eq("user_account", userAccount));
+        return tbSendOrder;
     }
 
     @ApiOperation("新增寄件订单")
