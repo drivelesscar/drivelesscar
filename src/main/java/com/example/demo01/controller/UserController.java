@@ -62,6 +62,9 @@ public class UserController {
 //        user.setRegistTime(format);
 //        user.setStatus("1");
         user.setPassword(password);
+        //数据库设置type不为空 这里没有设置type 1.mysql设置默认值 2.插入的时候设置 1或2
+        user.setType("O");
+        user.setTel("11111111111");
         int count = tbUserService.insert(user);
         System.out.println(count);
         if (count != 1) {
