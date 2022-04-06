@@ -21,35 +21,12 @@ import javax.annotation.Resource;
  */
 @Service
 public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUser> implements TbUserService {
-//    @Override
-//    public String login(String username, String password) {
-//        TbUser user = baseMapper.selectOne(new LambdaQueryWrapper<TbUser>()
-//                .eq(TbUser::getAccount, username));
-//        if (user.getPassword().equals(password)) {
-//           TbUser tbUser = new TbUser();
-//           tbUser.setAccount(username);
-//           tbUser.setPassword(password);
-//            return username+"登陆成功";
-//        }
-//        else {
-//            return "密码错误";
-//        }
-//    }
 
     @Override
     public int insert(TbUser user) {
-        return insert(user);
+        return baseMapper.insert(user);
     }
 
-    @Override
-    public int updateMonitorPointByAccount(TbUser tbUser) {
-        TbUser tbUser1 = baseMapper.selectOne(new LambdaQueryWrapper<TbUser>()
-                .eq(TbUser::getAccount, tbUser.getAccount()));
-        if (tbUser1.getPassword().equals(tbUser.getPassword())) {
-           return 1;
-        }
-        return 0;
-    }
 //    @Resource
 //    private TbUserMapper tbUserMapper;
 //

@@ -17,5 +17,5 @@ public interface TbUserService extends IService<TbUser> {
 
     int insert(TbUser user);
 
-    int updateMonitorPointByAccount(TbUser tbUser);
+    //int updateMonitorPointByAccount(TbUser tbUser);
 }
